@@ -1,0 +1,25 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "fv-az1944-744",
+    "children" : [ {
+      "name" : "1973@fv-az1944-744.main(1)",
+      "children" : [ {
+        "name" : "Login successful with correct credentials",
+        "uid" : "b427a0a8338dfbb7",
+        "parentUid" : "0cd30a896837e15cd300ea11b85d704e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1734918056367,
+          "stop" : 1734918077099,
+          "duration" : 20732
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0cd30a896837e15cd300ea11b85d704e"
+    } ],
+    "uid" : "f7dba13beb5ae23a32e2febb063fc1c4"
+  } ]
+}
