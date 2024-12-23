@@ -1,0 +1,197 @@
+{
+  "uid" : "4c6cb9b057f798aa",
+  "name" : "An example of picocontainer to login",
+  "fullName" : "workshopcucumberadvance/example.feature:5",
+  "historyId" : "da634d4bdba07e275bca0063f130be1",
+  "time" : {
+    "start" : 1734920206679,
+    "stop" : 1734920218269,
+    "duration" : 11590
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ {
+    "name" : "workshopcucumberadvance.Test.StepsDef.hook.init.initializeTest(io.cucumber.java.Scenario)",
+    "time" : {
+      "start" : 1734920206681,
+      "stop" : 1734920216121,
+      "duration" : 9440
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given Login page is displayed",
+      "time" : {
+        "start" : 1734920216176,
+        "stop" : 1734920216274,
+        "duration" : 98
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "When Lets send only \"graviel.sosa\" user",
+      "time" : {
+        "start" : 1734920216274,
+        "stop" : 1734920216275,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And Lets send only the \"12345678\" password",
+      "time" : {
+        "start" : 1734920216275,
+        "stop" : 1734920216276,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And User brings the whole needed data to login",
+      "time" : {
+        "start" : 1734920216276,
+        "stop" : 1734920217091,
+        "duration" : 815
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "And User clicks on Login button",
+      "time" : {
+        "start" : 1734920217092,
+        "stop" : 1734920217425,
+        "duration" : 333
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Then the Home page is displayed",
+      "time" : {
+        "start" : 1734920217425,
+        "stop" : 1734920218178,
+        "duration" : 753
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "workshopcucumberadvance.Test.StepsDef.hook.init.TearDownTest(io.cucumber.java.Scenario)",
+    "time" : {
+      "start" : 1734920218179,
+      "stop" : 1734920218267,
+      "duration" : 88
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "Regression"
+  }, {
+    "name" : "tag",
+    "value" : "ExampleLogin"
+  }, {
+    "name" : "host",
+    "value" : "fv-az1676-657"
+  }, {
+    "name" : "thread",
+    "value" : "1960@fv-az1676-657.main(1)"
+  }, {
+    "name" : "feature",
+    "value" : "An example of picocontainer"
+  }, {
+    "name" : "story",
+    "value" : "An example of picocontainer to login"
+  }, {
+    "name" : "suite",
+    "value" : "An example of picocontainer"
+  }, {
+    "name" : "testClass",
+    "value" : "An example of picocontainer to login"
+  }, {
+    "name" : "framework",
+    "value" : "cucumber4jvm"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "gherkin_uri",
+    "value" : "classpath:workshopcucumberadvance/example.feature"
+  }, {
+    "name" : "package",
+    "value" : "workshopcucumberadvance.example_feature.An example of picocontainer"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "ExampleLogin", "Regression" ]
+  },
+  "source" : "4c6cb9b057f798aa.json",
+  "parameterValues" : [ ]
+}

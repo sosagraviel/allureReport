@@ -1,8 +1,8 @@
 {
   "total" : 1,
   "items" : [ {
-    "uid" : "14102d61eef2af473312d4f91dec531b",
-    "name" : "Login",
+    "uid" : "c91666f92f7525735462776d776923ee",
+    "name" : "An example of picocontainer",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
