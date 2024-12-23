@@ -4,7 +4,13 @@ on:
   push:
     branches:
       - main
-  pull_request: null
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      parametro1:
+        description: 'Descripción del parámetro 1'
+        required: false
+        default: 'valor por defecto'
 
 jobs:
   build-and-test:
@@ -14,7 +20,7 @@ jobs:
       - name: Checkout Workflow Repository
         uses: actions/checkout@v4
 
-      # Clonar el repositorio externos
+      # Clonar el repositorio externo
       - name: Clone External Repository
         run: |
           git clone https://github.com/thisisqubika/qa-selenium-workshop.git cucumber-archetype-parallel-advance
