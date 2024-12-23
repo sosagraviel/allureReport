@@ -7,13 +7,13 @@
       "name" : "Login successful with correct credentials",
       "children" : [ {
         "name" : "Login successful with correct credentials",
-        "uid" : "b427a0a8338dfbb7",
+        "uid" : "729bdf5d7f653f40",
         "parentUid" : "768b850975e20f97054befc43d6b4857",
         "status" : "passed",
         "time" : {
-          "start" : 1734918056367,
-          "stop" : 1734918077099,
-          "duration" : 20732
+          "start" : 1734919568304,
+          "stop" : 1734919574596,
+          "duration" : 6292
         },
         "flaky" : false,
         "parameters" : [ ]

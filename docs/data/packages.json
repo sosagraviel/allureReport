@@ -5,13 +5,13 @@
     "name" : "workshopcucumberadvance.Login.Login_feature.Login",
     "children" : [ {
       "name" : "Login successful with correct credentials",
-      "uid" : "b427a0a8338dfbb7",
+      "uid" : "729bdf5d7f653f40",
       "parentUid" : "a760a4ffee1188a097cfa83bd400e4cb",
       "status" : "passed",
       "time" : {
-        "start" : 1734918056367,
-        "stop" : 1734918077099,
-        "duration" : 20732
+        "start" : 1734919568304,
+        "stop" : 1734919574596,
+        "duration" : 6292
       },
       "flaky" : false,
       "parameters" : [ ]
