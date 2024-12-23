@@ -51,7 +51,7 @@ jobs:
           export PASSWORD=Carolina123.
           export PASSWORD_SUPERADMIN=Carolina123.
           export PLATFORM_GOAL_EXECUTION_TEST=LOCAL
-          mvn test -Dcucumber.filter.tags="@Logins"
+          mvn test -Dcucumber.filter.tags="@ExampleLogin"
 
       # Debug: Verificar archivos en el repositorio clonado
       - name: Debug Check Features Directory
