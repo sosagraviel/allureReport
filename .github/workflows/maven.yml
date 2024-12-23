@@ -39,13 +39,13 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('cucumber-archetype-parallel-advance/pom.xml') }}
+          key: ${{ runner.os }}-maven-${{ hashFiles('cucumber-archetype-parallel-advance/cucumber-archetype-parallel-advance/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
 
       # Ejecutar pruebas
       - name: Execute Tests
-        working-directory: ./cucumber-archetype-parallel-advance
+        working-directory: ./cucumber-archetype-parallel-advance/cucumber-archetype-parallel-advance
         run: |
           export ENVIRONMENTS=QA
           export PASSWORD=Carolina123.
@@ -56,19 +56,19 @@ jobs:
       # Debug: Verificar archivos en el repositorio clonado
       - name: Debug Check Features Directory
         run: |
-          ls -R ./cucumber-archetype-parallel-advance/src/test/resources/
-          ls -R ./cucumber-archetype-parallel-advance/src/test/java/
+          ls -R ./cucumber-archetype-parallel-advance/cucumber-archetype-parallel-advance/src/test/resources/
+          ls -R ./cucumber-archetype-parallel-advance/cucumber-archetype-parallel-advance/src/test/java/
 
       # Generar el reporte Allure
       - name: Generate Allure Report
-        working-directory: ./cucumber-archetype-parallel-advance
+        working-directory: ./cucumber-archetype-parallel-advance/cucumber-archetype-parallel-advance
         run: mvn io.qameta.allure:allure-maven:2.10.0:report
 
       # Copiar el reporte Allure a la carpeta docs
       - name: Copy Allure Report to docs Folder
         run: |
           mkdir -p ./docs
-          cp -R ./cucumber-archetype-parallel-advance/target/site/allure-maven-plugin/* ./docs/
+          cp -R ./cucumber-archetype-parallel-advance/cucumber-archetype-parallel-advance/target/site/allure-maven-plugin/* ./docs/
 
       # Commit y push del reporte Allure en la carpeta docs
       - name: Commit and Push Allure Report
@@ -86,4 +86,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: allure-report
-          path: cucumber-archetype-parallel-advance/target/site/allure-maven-plugin/
+          path: cucumber-archetype-parallel-advance/cucumber-archetype-parallel-advance/target/site/allure-maven-plugin/
