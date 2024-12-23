@@ -1,0 +1,83 @@
+name: Run Selenium Tests with Allure Reports from External Repo
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: null
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout el repositorio actual (workflow)
+      - name: Checkout Workflow Repository
+        uses: actions/checkout@v4
+
+      # Clonar el repositorio externo
+      - name: Clone External Repository
+        run: |
+          git clone https://github.com/thisisqubika/qa-selenium-workshop.git cucumber-archetype-parallel-advance
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Set up JDK 20
+      - name: Set up JDK 20
+        uses: actions/setup-java@v4
+        with:
+          java-version: "20"
+          distribution: temurin
+
+      # Cache Maven dependencies
+      - name: Cache Maven dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('cucumber-archetype-parallel-advance/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # Ejecutar pruebas
+      - name: Execute Tests
+        working-directory: ./cucumber-archetype-parallel-advance
+        run: |
+          export ENVIRONMENTS=QA
+          export PASSWORD=Carolina123.
+          export PASSWORD_SUPERADMIN=Carolina123.
+          export PLATFORM_GOAL_EXECUTION_TEST=LOCAL
+          mvn test -Dcucumber.filter.tags="@Logins"
+
+      # Debug: Verificar archivos en el repositorio clonado
+      - name: Debug Check Features Directory
+        run: |
+          ls -R ./cucumber-archetype-parallel-advance/src/test/resources/
+          ls -R ./cucumber-archetype-parallel-advance/src/test/java/
+
+      # Generar el reporte Allure
+      - name: Generate Allure Report
+        working-directory: ./cucumber-archetype-parallel-advance
+        run: mvn io.qameta.allure:allure-maven:2.10.0:report
+
+      # Copiar el reporte Allure a la carpeta docs
+      - name: Copy Allure Report to docs Folder
+        run: |
+          mkdir -p ./docs
+          cp -R ./cucumber-archetype-parallel-advance/target/site/allure-maven-plugin/* ./docs/
+
+      # Commit y push del reporte Allure en la carpeta docs
+      - name: Commit and Push Allure Report
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add ./docs
+          git commit -m "Update Allure Report"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Publicar el reporte Allure como artefacto (opcional)
+      - name: Publish Allure Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report
+          path: cucumber-archetype-parallel-advance/target/site/allure-maven-plugin/
